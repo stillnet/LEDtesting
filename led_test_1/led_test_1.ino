@@ -23,14 +23,16 @@ void loop() {
 
 void writeWord(int letters[]) {
   for (int i=0; i < 6; i++) {
+    FastLED.clear();
+    FastLED.show();
     Serial.print("looping. Will turn on ");
     Serial.print(letters[i]);
     Serial.println(" now");
     //leds[ letters[i] ] = CRGB::Red;
     leds[ letters[i] ].red   = 100;
     leds[ letters[i] ].green = 25;
-    leds[ letters[i] ].blue  = 0;
+    leds[ letters[i] ].blue  = 25;
     FastLED.show();
-    delay(200);
+    delay(400);
   }
 }
